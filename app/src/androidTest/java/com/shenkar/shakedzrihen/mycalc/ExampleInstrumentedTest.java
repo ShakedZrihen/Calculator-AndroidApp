@@ -1,4 +1,4 @@
-package com.example.shakedzrihen.calculator_for_mydroid;
+package com.shenkar.shakedzrihen.mycalc;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.example.shakedzrihen.calculator_for_mydroid", appContext.getPackageName());
+        assertEquals("com.example.shakedzrihen.com.zrihen.shaked.mycalc", appContext.getPackageName());
     }
 }

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@android:color/holo_orange_dark"
     android:visibility="visible"
-    tools:context="com.example.shakedzrihen.calculator_for_mydroid.MainActivity">
+    tools:context="com.shenkar.shakedzrihen.mycalc.MainActivity">
 
     <TextView
         android:id="@+id/textView2"

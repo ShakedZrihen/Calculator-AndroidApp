@@ -1,4 +1,4 @@
-package com.example.shakedzrihen.calculator_for_mydroid;
+package com.shenkar.shakedzrihen.mycalc;
 
 import org.junit.Test;
 
