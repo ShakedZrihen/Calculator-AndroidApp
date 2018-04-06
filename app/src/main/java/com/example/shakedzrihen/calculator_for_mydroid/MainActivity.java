@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
 import android.view.View;
+
+import java.text.DecimalFormat;
 import java.util.regex.Pattern;
 import android.util.Log;
 
@@ -71,23 +73,30 @@ public class MainActivity extends AppCompatActivity {
         updateScreen();
     }
 
+    public String answerToString(double answer){
+        if ((int)answer == answer) {
+            return new DecimalFormat("##").format(answer);
+        } else {
+            return new DecimalFormat("##.###").format(answer);
+        }
+    }
+
     public String calculate(String x, String y, String operator){
         _result = "";
         switch (operator){
-            case "+": return String.valueOf(Double.valueOf(x) + Double.valueOf(y));
-            case "-": return String.valueOf(Double.valueOf(x) - Double.valueOf(y));
+            case "+": return answerToString(Double.valueOf(x) + Double.valueOf(y));
+            case "-": return answerToString(Double.valueOf(x) - Double.valueOf(y));
             case ":":
                 try {
                     if ("0".equals(y)){
                         throw new IllegalArgumentException("Argument 'divisor' is 0");
                     }
-                    return String.valueOf(Double.valueOf(x) / Double.valueOf(y));
+                    return answerToString(Double.valueOf(x) / Double.valueOf(y));
                 } catch (Exception e) {
-                    System.out.println("here!");
                     Log.d("calc", e.getMessage());
                     return  x;
                 }
-            case "x": return String.valueOf(Double.valueOf(x) * Double.valueOf(y));
+            case "x": return answerToString(Double.valueOf(x) * Double.valueOf(y));
             default: return "Invalid Operation";
         }
     }
