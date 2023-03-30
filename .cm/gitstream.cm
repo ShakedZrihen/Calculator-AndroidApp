@@ -17,6 +17,6 @@ automations:
     run:
       - action: add-label@v1
         args:
-          label: "/:\ gitStream"
+          label: "/:\\ gitStream"
 calc:
   etr: {{ branch | estimatedReviewTime }}
