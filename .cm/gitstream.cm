@@ -3,7 +3,8 @@ manifest:
   version: 1.0
 
 config:
-  admins: ['EladKohavi']
+  admins: 
+    users: ['EladKohavi']
 automations:
   estimated_time_to_review:
     if:
