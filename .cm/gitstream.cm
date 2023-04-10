@@ -4,6 +4,7 @@ manifest:
 
 config:
   admins: ['EladKohavi']
+  
 automations:
   estimated_time_to_review:
     if:
