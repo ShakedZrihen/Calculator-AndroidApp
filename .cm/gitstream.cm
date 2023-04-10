@@ -2,6 +2,8 @@
 manifest:
   version: 1.0
 
+config:
+  admins: ['EladKohavi']
 automations:
   estimated_time_to_review:
     if:
