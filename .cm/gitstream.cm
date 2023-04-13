@@ -16,7 +16,7 @@ automations:
             {{ pr.description }}
   code_experts:
     if: 
-      - {{ pr.title | match(term="shaked") }}
+      - {{ pr.title | match(regex=r/^AB#\d+/) }}
     run:
       - action: add-label@v1
         args:
