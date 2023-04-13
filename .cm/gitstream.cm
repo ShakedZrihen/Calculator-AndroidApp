@@ -14,12 +14,16 @@ automations:
         args:
           comment: |
             {{ pr.description }}
-  code_experts:
-    if: 
-      - {{ pr.title | match(regex=r/^AB#\d+/) }}
-    run:
-      - action: add-label@v1
-        args:
-          label: "/:\\ gitStream"
+#   code_experts:
+#     if: 
+#       - {{ pr.title | match(regex=r/^AB#\d+/) }}
+#     run:
+#       - action: require-reviewers@v1
+#         args:
+#           reviewers: [<org>/<teamName>]
+# #       if you want to auto assign them as a reviewers
+# #       - action: add-reviewers@v1
+# #         args:
+# #           reviewers: [<org>/<teamName>]
 calc:
   etr: {{ branch | estimatedReviewTime }}
