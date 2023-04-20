@@ -21,5 +21,14 @@ automations:
         - action: add-reviewers@v1
           args:
             reviewers: {{ repo | codeExperts(gt=10) }}
+  comment_experts:
+    if:
+      - {{ author.on_jvm_team }}
+    run:
+      - action: add-comment@v1
+        args:
+          # Note the comment starts with | and a new-line as explainCodeExperts generates a multiline comment.
+          comment: |
+            {{ repo | explainCodeExperts(gt=10) }} 
 calc:
   etr: {{ branch | estimatedReviewTime }}
