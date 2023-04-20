@@ -23,7 +23,7 @@ automations:
             reviewers: {{ repo | codeExperts(gt=10) }}
   comment_experts:
     if:
-      - {{ author.on_jvm_team }}
+      - true
     run:
       - action: add-comment@v1
         args:
