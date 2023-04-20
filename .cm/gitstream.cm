@@ -14,16 +14,12 @@ automations:
         args:
           comment: |
             {{ pr.description }}
-#   code_experts:
-#     if: 
-#       - {{ pr.title | match(regex=r/^AB#\d+/) }}
-#     run:
-#       - action: require-reviewers@v1
-#         args:
-#           reviewers: [<org>/<teamName>]
-# #       if you want to auto assign them as a reviewers
-# #       - action: add-reviewers@v1
-# #         args:
-# #           reviewers: [<org>/<teamName>]
+  code_experts:
+      if: 
+        - true
+      run:
+        - action: add-reviewers@v1
+          args:
+            reviewers: {{ repo | codeExperts(gt=10) }}
 calc:
   etr: {{ branch | estimatedReviewTime }}
